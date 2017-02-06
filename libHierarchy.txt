@@ -1,0 +1,9 @@
+
+		
+				Website  -Name
+
+{		Page -Title				Page	.....		.....
+
+{H1 {-Text   P {-Text   a -Link  Img -Src 		
+   -color      -color 
+   -font}      -font}                     }                                                    }
