@@ -15,8 +15,9 @@ public class Page {
     public ArrayList<Element> elements;
     public String title;
 
-    public Page() {
+    public Page(String Title) {
         elements = new ArrayList<Element>();
+        title=Title;
     }
     
      }

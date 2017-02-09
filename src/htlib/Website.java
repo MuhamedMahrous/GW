@@ -14,9 +14,10 @@ import java.util.ArrayList;
 public class Website {
 
     public ArrayList<Page> pages;
-
-    public Website() {
+    String directory;
+    public Website(String Directory) {
         pages = new ArrayList<Page>();
+        directory=Directory;
     }
 
 }

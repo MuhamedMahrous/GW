@@ -14,10 +14,10 @@ public class P extends Element {
     public String color;
     public String font;   
 
-    public P() {
-        this.text = "";
-        this.color = "";
-        this.font = "";
+    public P(String Text, String Color , String Font) {
+        this.text = Text;
+        this.color = Color;
+        this.font = Font;
     }
     
 }

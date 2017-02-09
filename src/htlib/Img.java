@@ -12,8 +12,8 @@ package htlib;
 public class Img extends Element{
     public String src;
     
-    Img()
+    Img(String Src)
     {
-    this.src="";
+    this.src=Src;
     }
 }

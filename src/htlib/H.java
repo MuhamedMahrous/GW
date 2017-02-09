@@ -14,9 +14,9 @@ public class H extends Element{
     public String color;
     public String font;   
 
-    public H() {
-        this.text = "";
-        this.color = "";
-        this.font = "";
+    public H(String Text, String Color, String Font) {
+        this.text = Text;
+        this.color = Color;
+        this.font = Font;
     }
 }
