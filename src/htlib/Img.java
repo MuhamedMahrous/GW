@@ -9,11 +9,13 @@ package htlib;
  *
  * @author muhammedmahrous
  */
-public class Img extends Element{
+public class Img extends Element {
+
     public String src;
-    
-    Img(String Src)
-    {
-    this.src=Src;
+
+    Img(String Src, int Index) {
+        this.src = Src;
+        this.index = Index;
+
     }
 }

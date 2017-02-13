@@ -9,7 +9,11 @@ package htlib;
  *
  * @author muhammedmahrous
  */
-public class Element {
-    int index;
+public class H1 extends H{
+    
+    public H1(String Text, String Color, String Font, int Index) {
+        super(Text, Color, Font, Index);
+    }
+    
     
 }

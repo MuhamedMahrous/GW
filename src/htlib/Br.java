@@ -9,7 +9,9 @@ package htlib;
  *
  * @author muhammedmahrous
  */
-public class Element {
-    int index;
+public class Br extends Element{
+
+    public Br() {
+    }
     
 }

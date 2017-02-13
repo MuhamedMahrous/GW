@@ -9,14 +9,17 @@ package htlib;
  *
  * @author muhammedmahrous
  */
-public class H extends Element{
+public class H extends Element {
+
     public String text;
     public String color;
-    public String font;   
+    public String font;
 
-    public H(String Text, String Color, String Font) {
+    public H(String Text, String Color, String Font, int Index) {
         this.text = Text;
         this.color = Color;
         this.font = Font;
+        this.index = Index;
+
     }
 }

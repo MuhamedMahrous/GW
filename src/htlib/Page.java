@@ -14,10 +14,12 @@ import java.util.ArrayList;
 public class Page {
     public ArrayList<Element> elements;
     public String title;
+    public int index;
 
-    public Page(String Title) {
-        elements = new ArrayList<Element>();
-        title=Title;
+    public Page(String Title,int Index) {
+        this.elements = new ArrayList<>();
+        this.title=Title;
+        this.index=Index;
     }
     
      }

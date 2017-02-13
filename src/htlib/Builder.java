@@ -17,18 +17,17 @@ import java.util.ArrayList;
 public class Builder {
 
     public void build(Website ws) throws IOException {
-        if(!ws.pages.isEmpty())
-        {
+        if (!ws.pages.isEmpty()) {
             for (int i = 0; i < ws.pages.size(); i++) {
                 String temp_page;
-                temp_page=make_page(ws.pages.get(i));
-                File temp = new File(ws.directory+"/"+ws.pages.get(i).title+".html");
+                temp_page = make_page(ws.pages.get(i));
+                File temp = new File(ws.directory + "/" + ws.pages.get(i).title + ".html");
                 FileWriter writer = new FileWriter(temp);
                 writer.write(temp_page);
                 writer.close();
             }
         }
-            }
+    }
 
     private String make_page(Page p) {
         String page = "";
@@ -38,14 +37,18 @@ public class Builder {
                 Element temp = elements.get(i);
                 if (temp.getClass().equals(P.class)) {
                     page += make_paragraph((P) elements.get(i));
-                } else if (temp.getClass().equals(H.class)) {
+                } else if (H.class.isAssignableFrom(temp.getClass())) {
                     page += make_heading((H) elements.get(i));
                 } else if (temp.getClass().equals(A.class)) {
                     page += make_anchor((A) elements.get(i));
                 } else if (temp.getClass().equals(Img.class)) {
                     page += make_img((Img) elements.get(i));
+                } else if (temp.getClass().equals(Br.class)) {
+                    page += make_break();
+                } else if (temp.getClass().equals(Button.class)) {
+                    page += make_button((Button) elements.get(i));
                 }
-                page+="\n";
+                page += "\n";
             }
         }
         page = "<!DOCTYPE html>\n"
@@ -53,8 +56,8 @@ public class Builder {
                 + "<head>\n"
                 + "	<title>" + p.title + "</title>\n"
                 + "</head>\n"
-                + "<body>\n" + 
-                page
+                + "<body>\n"
+                + page
                 + "\n"
                 + "</body>\n"
                 + "</html>";
@@ -72,8 +75,25 @@ public class Builder {
 
     private String make_heading(H Head) {
         String head;
+        String size;
 
-        head = "<h1 " + "style=\"color:" + Head.color + ";font:" + Head.font + "\"" + ">" + Head.text + "</h1>";
+        if (Head.getClass().equals(H1.class)) {
+            size = "h1";
+        } else if (Head.getClass().equals(H2.class)) {
+            size = "h2";
+        } else if (Head.getClass().equals(H3.class)) {
+            size = "h3";
+        } else if (Head.getClass().equals(H4.class)) {
+            size = "h4";
+        } else if (Head.getClass().equals(H5.class)) {
+            size = "h5";
+        } else if (Head.getClass().equals(H6.class)) {
+            size = "h6";
+        } else {
+            size = "h1";
+        }
+
+        head = "<" + size + " style=\"color:" + Head.color + ";font:" + Head.font + "\"" + ">" + Head.text + "</" + size + ">";
 
         return head;
     }
@@ -94,4 +114,15 @@ public class Builder {
         return img;
     }
 
+    private String make_break() {
+        String br;
+        br = "<br>";
+        return br;
+    }
+
+    private String make_button(Button btn) {
+        String b;
+        b = "<button "+"type="+btn.type+"\">" + btn.text + "</button>";
+        return b;
+    }
 }

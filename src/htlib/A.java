@@ -12,9 +12,11 @@ package htlib;
 public class A extends Element{
     public String link;
     public String text;
-    public A(String Link, String Text) {
+    public A(String Link, String Text , int Index) {
         this.link=Link;
         this.text=Text;
+        this.index=Index;
     }
+    
 
 }
