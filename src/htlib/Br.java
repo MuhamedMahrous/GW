@@ -10,8 +10,18 @@ package htlib;
  * @author muhammedmahrous
  */
 public class Br extends Element{
-
+    
     public Br() {
+        make_HTML();
     }
+
+    public String getHTML_code() {
+        return HTML_code;
+    }
+    
+    private void make_HTML() {
+        HTML_code = "<br>";
+    }
+
     
 }

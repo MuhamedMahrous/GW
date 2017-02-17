@@ -10,6 +10,6 @@ package htlib;
  * @author muhammedmahrous
  */
 public class Element {
-    int index;
-    
+    protected int index;    
+    protected String HTML_code;
 }
