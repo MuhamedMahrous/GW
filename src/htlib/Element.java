@@ -12,4 +12,13 @@ package htlib;
 public class Element {
     protected int index;    
     protected String HTML_code;
+
+    protected int getIndex() {
+        return index;
+    }
+
+    protected String getHTML_code() {
+        return HTML_code;
+    }
+    
 }

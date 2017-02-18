@@ -29,14 +29,23 @@ public class Page {
         make_page();
     }
     
-    void remove_element(int index)
+    void remove_element(int Index)
     {
-        elements.remove(index);
+        Element to_be_removed=null;
+        for (int i = 0; i < elements.size(); i++) {
+            if(elements.get(i).index==Index)
+                to_be_removed=elements.remove(i);
+        }
         make_page();
     }
-    Element get_element(int index)
+    Element get_element(int Index)
     {   
-        return elements.get(index);
+        Element to_be_returned=null;
+        for (int i = 0; i < elements.size(); i++) {
+            if(elements.get(i).index==Index)
+                to_be_returned=elements.get(i);
+        }
+        return to_be_returned;
     
     }
     public ArrayList<Element> getElements() {

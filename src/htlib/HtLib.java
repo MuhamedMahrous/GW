@@ -19,6 +19,28 @@ public class HtLib {
      */
     public static void main(String[] args) throws IOException {
 
+        /* UL and LI testing */
+        LI testItem = new LI(0, "circle", "First element", 0);
+        LI testItem2 = new LI(0, "WRONG TYPE(will be converted to circle)", "second element", 1);
+        LI testItem3 = new LI(0, "I", "third element", 2);
+        UL testlIST = new UL("disc", "compact");
+
+        testlIST.add_list_item(testItem);
+        testlIST.add_list_item(testItem2);
+        testlIST.add_list_item(testItem3);
+
+        // Print UL with items
+        System.out.println(testlIST.getHTML_code());
+
+        testlIST.remove_list_item(0);
+        testlIST.remove_list_item(1);
+        testlIST.remove_list_item(2);
+
+        System.out.println("--------------------------------------------");
+        // Print UL after removing items
+        System.out.println(testlIST.getHTML_code());
+
+        /*
         // For all the below classes use the constructor to intialize the needed attributes.
         Website usr1 = new Website("/home/muhammedmahrous/Desktop/test");
         Page pageone = new Page("Page one", 0);
@@ -56,7 +78,7 @@ public class HtLib {
         // website's constructor.
         Builder b = new Builder();
         b.build(usr1);
-
+         */
     }
 
 }
